@@ -21,6 +21,6 @@ A full-stack web application for booking sports turfs, built using React and Spr
 - JWT Authentication
 
 **Database:**
-- (Add your DB here: MySQL / PostgreSQL)
+- MySQL
 
 ## Project Structure
