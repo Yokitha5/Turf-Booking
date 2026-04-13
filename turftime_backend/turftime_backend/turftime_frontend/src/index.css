@@ -1,0 +1,185 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary-50: #e9fbef;
+  --color-primary-100: #c8f4d9;
+  --color-primary-200: #a3e6c0;
+  --color-primary-300: #7ad6a3;
+  --color-primary-400: #4dc484;
+  --color-primary-500: #2ca96b;
+  --color-primary-600: #1e8f58;
+  --color-primary-700: #167446;
+  --color-primary-800: #0f5935;
+  --color-primary-900: #0a3d26;
+}
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    color-scheme: light;
+  }
+
+  body {
+    @apply text-gray-900;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont,
+      'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+      'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background:
+      radial-gradient(ellipse at 0% 0%, #bbf7d0 0%, transparent 55%),
+      radial-gradient(ellipse at 100% 0%, #a7f3c0 0%, transparent 50%),
+      radial-gradient(ellipse at 60% 100%, #c8f7d8 0%, transparent 55%),
+      linear-gradient(150deg, #f0fdf4 0%, #dcfce7 35%, #d1fae5 65%, #ccfbde 100%);
+    color: #0f1f18;
+    min-height: 100vh;
+  }
+
+  a {
+    @apply text-primary-600 transition-colors;
+  }
+
+  a:hover {
+    @apply text-primary-700;
+  }
+
+  ::selection {
+    background: var(--color-primary-200);
+    color: #0a3d26;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-linear-to-r from-primary-500 to-primary-600 text-white px-6 py-3 rounded-full font-semibold shadow-lg shadow-primary-900/10 transition-all duration-200;
+  }
+
+  .btn-primary:hover {
+    @apply from-primary-600 to-primary-700 -translate-y-0.5 shadow-primary-900/20;
+  }
+
+  .btn-secondary {
+    @apply bg-white/70 text-primary-800 px-6 py-3 rounded-lg font-semibold border border-primary-100 shadow-sm transition-all duration-200 backdrop-blur;
+  }
+
+  .btn-secondary:hover {
+    @apply bg-white text-primary-900 shadow;
+  }
+
+  .btn-outline {
+    @apply border-2 border-primary-600 text-primary-700 px-6 py-3 rounded-lg font-semibold transition-all duration-200 bg-white/60 backdrop-blur;
+  }
+
+  .btn-outline:hover {
+    @apply bg-primary-50/80 text-primary-800 shadow;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 bg-white/80 border border-primary-200 rounded-lg outline-none transition-all placeholder-gray-400 backdrop-blur;
+  }
+
+  .input-field:focus {
+    @apply ring-2 ring-primary-500 border-transparent bg-white shadow-sm;
+  }
+
+  .card {
+    @apply bg-white/90 border border-primary-100 rounded-2xl shadow-md shadow-primary-900/8 transition-all duration-300 backdrop-blur;
+  }
+
+  .card:hover {
+    @apply shadow-lg shadow-primary-900/12 -translate-y-0.5;
+  }
+}
+
+@layer utilities {
+  .container-page {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .card-muted {
+    @apply bg-primary-50/70 border border-primary-100;
+  }
+
+  .surface-section {
+    @apply bg-white/75 border border-primary-100 backdrop-blur;
+  }
+
+  .surface-strong {
+    @apply bg-primary-900 text-primary-50 shadow-lg shadow-primary-900/30;
+  }
+
+  .page-bg {
+    min-height: 100vh;
+    background:
+      radial-gradient(ellipse at 0% 0%, #bbf7d0 0%, transparent 55%),
+      radial-gradient(ellipse at 100% 0%, #a7f3c0 0%, transparent 50%),
+      radial-gradient(ellipse at 60% 100%, #c8f7d8 0%, transparent 55%),
+      linear-gradient(150deg, #f0fdf4 0%, #dcfce7 35%, #d1fae5 65%, #ccfbde 100%);
+  }
+
+  .animate-fadeIn {
+    animation: fadeIn 0.3s ease-in;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes ballSpin {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+@keyframes ballBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes ballFloat {
+  0%, 100% {
+    transform: translateY(0) rotateZ(0deg);
+  }
+  25% {
+    transform: translateY(-15px) rotateZ(90deg);
+  }
+  50% {
+    transform: translateY(-25px) rotateZ(180deg);
+  }
+  75% {
+    transform: translateY(-15px) rotateZ(270deg);
+  }
+}
+
+.animate-ball-spin {
+  animation: ballSpin 6s linear infinite;
+}
+
+.animate-ball-bounce {
+  animation: ballBounce 2s ease-in-out infinite;
+}
+
+.animate-ball-float {
+  animation: ballFloat 8s ease-in-out infinite;
+}
+
