@@ -5,7 +5,7 @@
 ![MySQL](https://img.shields.io/badge/Database-MySQL-orange)
 ![JWT](https://img.shields.io/badge/Auth-JWT-black)
 
-A full-stack web application for booking sports turfs, built using React and Spring Boot microservices.
+A scalable full-stack turf booking platform that enables users to discover, book, and manage sports venues efficiently. Built using a microservices architecture with secure authentication and real-time booking management.
 
 ## Features
 - User authentication with JWT
@@ -29,3 +29,15 @@ A full-stack web application for booking sports turfs, built using React and Spr
 - MySQL
 
 ## Project Structure
+
+frontend/   → React (Vite) application  
+backend/    → Spring Boot microservices  
+
+backend/
+  auth-service/
+  booking-service/
+  payment-service/
+  notification-service/
+
+database/
+  schema.sql
