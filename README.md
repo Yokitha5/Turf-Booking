@@ -1,7 +1,7 @@
-![Java](https://img.shields.io/badge/Backend-Java-blue)
-![Spring Boot](https://img.shields.io/badge/Framework-SpringBoot-green)
 ![React](https://img.shields.io/badge/Frontend-React-blue)
 ![Vite](https://img.shields.io/badge/Build-Vite-purple)
+![Java](https://img.shields.io/badge/Backend-Java-blue)
+![Spring Boot](https://img.shields.io/badge/Framework-SpringBoot-green)
 ![MySQL](https://img.shields.io/badge/Database-MySQL-orange)
 ![JWT](https://img.shields.io/badge/Auth-JWT-black)
 
